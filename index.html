@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Test de ojo cromático</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<main class="wrap">
+
+<section id="intro">
+  <div class="ring" aria-hidden="true"></div>
+  <h1>¿Qué tan fino es tu ojo para el color?</h1>
+  <p class="lead">Encuentra el cuadro diferente. 21 rondas, menos de dos minutos.</p>
+  <div class="board" id="demo" style="grid-template-columns:repeat(4,1fr)"></div>
+  <p class="hint">Toca el cuadro distinto para empezar</p>
+  <div class="facts">
+    <div><b>3 tipos</b>de conos en tu retina mezclan todo lo que ves</div>
+    <div><b>7 familias</b>de color evaluadas: rojos a morados</div>
+    <div><b>10 s</b>por ronda</div>
+  </div>
+  <p class="note">Sube el brillo, quita el modo nocturno o filtro de luz azul y evita reflejos en la pantalla.</p>
+</section>
+
+<section id="game" hidden>
+  <div class="hud"><span class="n" id="round">1 / 21</span><span class="s" id="streak"></span></div>
+  <div class="bar"><i id="prog"></i></div>
+  <div class="bar clock"><i id="clock"></i></div>
+  <div class="board" id="board"></div>
+  <p class="hint" id="hint">¿Cuál es diferente?</p>
+</section>
+
+<section id="result" hidden>
+  <p class="note" style="margin:0">Tu puntuación cromática</p>
+  <div class="score" id="score">0<small>/100</small></div>
+  <div class="lvl" id="lvl"></div>
+  <p id="desc" style="margin:0 0 18px"></p>
+  <div class="row">
+    <button class="btn" id="again">Repetir test</button>
+    <button class="btn alt" id="share">Copiar resultado</button>
+  </div>
+
+  <div class="card">
+    <h3>Por familia de color</h3>
+    <p class="note" style="margin:4px 0 6px">Qué tan pequeña fue la diferencia más sutil que detectaste en cada tono.</p>
+    <div id="fams"></div>
+    <p class="note" id="famnote" style="margin-bottom:0"></p>
+  </div>
+
+  <div class="card">
+    <h3>Tus 21 respuestas</h3>
+    <p class="note" style="margin:4px 0 0">Cada cuadro es el color de la ronda; los marcados en rojo fueron fallos.</p>
+    <div class="dots" id="dots"></div>
+    <p class="note" id="stats" style="margin:10px 0 0"></p>
+  </div>
+
+  <div class="card" id="histCard" hidden>
+    <h3>Tus intentos anteriores</h3>
+    <div class="hist" id="hist"></div>
+  </div>
+
+  <div class="card learn">
+    <h3 style="margin-top:0">Cómo ves el color</h3>
+    <p>Tu retina tiene tres tipos de conos, sensibles a longitudes de onda largas (L, rojizas), medias (M, verdosas) y cortas (S, azuladas). El cerebro compara sus señales: así distingue matices que difieren muy poco.</p>
+    <h3>Qué mide este test</h3>
+    <p>Cada ronda gira el tono de un cuadro una cantidad medida en un espacio de color perceptual (OKLab). Si aciertas, la diferencia baja; si fallas, sube. Tu puntuación sale de la diferencia mínima que lograste distinguir de forma estable.</p>
+    <h3>Por qué rojos y verdes importan</h3>
+    <p>La deficiencia de color más común confunde rojos con verdes, porque los conos L y M se parecen mucho. Afecta a una proporción notable de hombres y a muy pocas mujeres, y muchas personas no lo saben.</p>
+    <h3>Qué no es</h3>
+    <p>No es un diagnóstico. Tu pantalla, su brillo y la luz del cuarto cambian el resultado. Si notas dificultad constante con ciertos colores, un optometrista puede hacerte pruebas como Ishihara o Farnsworth.</p>
+  </div>
+</section>
+
+<script src="js/funcionalidad.js"></script>
+
+</main>
+
+</body>
+</html>
